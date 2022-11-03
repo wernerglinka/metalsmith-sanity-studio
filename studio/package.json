@@ -1,10 +1,10 @@
 {
-  "name": "sanitytemplatepersonalcrm",
+  "name": "sanity-metalsmith-studio",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "package.json",
-  "author": "Knut Melvær <knut@sanity.io>",
+  "author": "Werner Glinka <werner@glinka.co>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -12,10 +12,12 @@
     "build": "sanity build"
   },
   "keywords": [
+    "metalsmith",
     "sanity"
   ],
   "dependencies": {
     "@sanity/base": "^2.35.0",
+    "@sanity/code-input": "^2.35.0",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.35.0",
     "@sanity/default-layout": "^2.35.0",
@@ -28,6 +30,7 @@
     "react-dom": "^18.2",
     "react-icons": "^4.6.0",
     "sanity-plugin-asset-source-unsplash": "^0.2.4",
+    "sanity-plugin-icon-picker": "^2.0.2",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

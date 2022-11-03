@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Website Studio"
+    "name": "Metalsmith Website Studio"
   },
   "api": {
-    "projectId": "ya58qiiq",
+    "projectId": "f99118fv",
     "dataset": "production"
   },
   "plugins": [
@@ -13,23 +13,14 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "asset-source-unsplash"
+    "asset-source-unsplash",
+    "@sanity/code-input",
+    "icon-picker"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./src/structure/deskStructure.js"
     }
   ]
 }

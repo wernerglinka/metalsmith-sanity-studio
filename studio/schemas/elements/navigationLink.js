@@ -1,5 +1,5 @@
 export default {
-  name: 'navLink',
+  name: 'navigation.link',
   type: 'object',
   title: 'Link',
   preview: {
@@ -15,9 +15,18 @@ export default {
     {
       type: 'reference',
       name: 'target',
-      title: 'Target route',
-      to: [{ type: 'route' }],
+      title: 'Target article',
+      to: [{ type: 'page' }],
       description: 'No target article turns the item into a subheading.',
+      // _weak: true // enable if you don't want reference integrity checks  
+    },
+    {
+      title: "Icon",
+      name: "icon",
+      type: "iconPicker",
+      options: {
+          providers: ["fi"]
+      }
     },
     {
       type: 'string',
@@ -26,10 +35,15 @@ export default {
       description: 'Override title from the target article.',
     },
     {
+      type: 'string',
+      name: 'linkClass',
+      title: 'Link Class',
+    },
+    {
       type: 'array',
       name: 'children',
       title: 'Children',
-      of: [{ type: 'navLink' }],
+      of: [{ type: 'navigation.link' }],
     },
   ],
-};
+}
