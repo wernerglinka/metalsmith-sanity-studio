@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "Website Studio",
-  "description": "Simple studio to manage a website",
+  "description": "Simple studio test to manage a website",
   "previewMedia": {
     "type": "image",
     "src": ".sanity-template/assets/studio.png",
