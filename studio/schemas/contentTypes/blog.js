@@ -1,8 +1,8 @@
 import {FiFileText} from "react-icons/fi";
 
 export default {
-  name: 'post',
-  title: 'Post',
+  name: 'blog',
+  title: 'Blog Posts',
   type: 'document',
   icon: FiFileText,
   fieldsets: [
@@ -52,17 +52,14 @@ export default {
       }
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'authors'}
-    },
-    {
+      title: 'Authors List',
       name: 'authorsList',
       type: 'array',
-      title: 'Authors List',
       of: [
-        { type: 'authors' },
+        { 
+          type: 'reference', 
+          to: {type: 'authors'}
+        },
       ],
     },
     {
@@ -74,6 +71,16 @@ export default {
           title: 'Alternative Text',
           name: 'alt',
           type: 'string'
+        },
+        {
+          title: 'Caption',
+          name: 'caption',
+          type: 'string'
+        },
+        {
+          name: 'credits',
+          type: 'string',
+          title: 'Credits',
         }
       ]
     },
@@ -95,22 +102,27 @@ export default {
       },
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blogContent'
-    }
+      name: 'content',
+      type: 'array',
+      title: 'Page sections',
+      description: 'Add, edit, and reorder sections',
+      of: [
+        { type: 'section' },
+      ],
+    },
   ],
 
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      author0: `authorsList.0.name`,
+      author1: `authorsList.1.name`,
       media: 'mainImage'
     },
     prepare(selection) {
-      const {author} = selection
+      const {author0, author1, author2} = selection
       return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`
+        subtitle: author0 && `by ${author0} ${author1 ? `,et al.` : ''}`
       })
     }
   }

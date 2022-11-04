@@ -26,6 +26,7 @@ export default {
       options: {
         list: [
           { title: "Banner", value: "banner" },
+          { title: "Blog Content", value: "blogContent" },
           { title: "Media", value: "media" },
           { title: "Text", value: "text" },
         ],
@@ -138,6 +139,7 @@ export default {
       of: [
         { type: 'textBlock' },
         { type: 'imageBlock' },
+        { type: 'blogContentBlock' },
       ]
     },
   ],

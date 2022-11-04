@@ -1,13 +1,12 @@
-# A studio for managing a website
+# The Sanity studio for managing a Metalsmith website
 
 **Features:**
 
-- WordPress-esque content models (but better)
-- Types for pages, posts, routes, navigation, comments
-- Split-pane view for viewing post comments (using incoming references)
+- Structured content models
+- Types for pages, navigation, and other content
 - Deploys on Netlify
 
-Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-website-studio).
+Based on the simple [Sanity Studio](https://github.com/sanity-io/sanity-template-website-studio/tree/e0bc165fe915b554edeabfa911c8a82c95b51f79) template.
 
 ## Quick start
 

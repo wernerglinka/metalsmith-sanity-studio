@@ -1,8 +1,8 @@
 import {FiUser} from "react-icons/fi";
 
 export default {
-  name: 'author',
-  title: 'Author',
+  name: 'authors',
+  title: 'Authors',
   type: 'document',
   icon: FiUser,
   fields: [
