@@ -25,7 +25,9 @@ export default {
       description: 'This is used to select the proper section styles',
       options: {
         list: [
+          { title: "Image Slider", value: "imageSlider" },
           { title: "Banner", value: "banner" },
+          { title: "Blog Header", value: "blogHeader" },
           { title: "Blog Content", value: "blogContent" },
           { title: "Media", value: "media" },
           { title: "Text", value: "text" },
@@ -140,9 +142,23 @@ export default {
         { type: 'textBlock' },
         { type: 'imageBlock' },
         { type: 'blogContentBlock' },
+        { type: 'blogHeaderBlock' },
+        { type: 'imageSlider' },
       ]
     },
   ],
+  preview: {
+    select: {
+      title: 'sectionType',
+    },
+    prepare(selection) {
+      console.log(selection);
+      const { title } = selection;
+      return {
+        title: title,
+      };
+    },
+  }
 }
 
 

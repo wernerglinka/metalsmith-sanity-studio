@@ -1,18 +1,18 @@
-import {FiFileText} from "react-icons/fi";
-import { format } from 'date-fns'
+import {FiHome} from "react-icons/fi";
 
 export default {
-  name: 'blog',
-  title: 'Blog Posts',
+  name: 'home',
+  title: 'Home',
+  icon: FiHome,
   type: 'document',
-  icon: FiFileText,
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'], 
   fieldsets: [
     { 
       name: 'metadata', 
       title: 'Page Meta Data',
       options: {
-        collapsible: true,
-        collapsed: true
+        collapsible: true, // Makes the whole fieldset collapsible
+        collapsed: true // Defines if the fieldset should be collapsed by default or not
       }
     },
   ],
@@ -48,47 +48,15 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: (doc) => {
-          const date = format(new Date(doc.publishedAt), "yyyy");
-          return `blog/${date}/${doc.title}`;
-        },
-        slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-      },
+        source: 'title',
+        maxLength: 96
+      }
     },
     {
       title: 'Body Classes',
       name: 'bodyClasses',
       type: 'string',
       description: 'Add classes to the body tag - add only if you know what you are doing',
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime'
-    },
-    {
-      title: 'Authors List',
-      name: 'authorsList',
-      type: 'array',
-      of: [
-        { 
-          type: 'reference', 
-          to: {type: 'authors'}
-        },
-      ],
-    },
-    {
-      name: 'categories',
-      type: 'string',
-      title: 'Post Categories',
-      options: {
-        list: [
-          { title: "Apple", value: "apple" },
-          { title: "Orange", value: "orange" },
-          { title: "Cherry", value: "cherry" },
-        ],
-      },
     },
     {
       name: 'content',
@@ -100,19 +68,15 @@ export default {
       ],
     },
   ],
-
   preview: {
     select: {
       title: 'title',
-      author0: `authorsList.0.name`,
-      author1: `authorsList.1.name`,
-      media: 'mainImage'
     },
     prepare(selection) {
-      const {author0, author1, author2} = selection
-      return Object.assign({}, selection, {
-        subtitle: author0 && `by ${author0} ${author1 ? `,et al.` : ''}`
-      })
-    }
+      const { title } = selection;
+      return {
+        title: title,
+      };
+    },
   }
 }
