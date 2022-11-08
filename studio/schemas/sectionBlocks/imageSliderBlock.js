@@ -1,6 +1,6 @@
 export default {
-  name: 'imageSlider',
-  title: 'Image Slider',
+  name: 'imageSliderBlock',
+  title: 'Image Slider Block',
   type: 'object',
   fields: [
     {

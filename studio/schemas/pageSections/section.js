@@ -143,7 +143,7 @@ export default {
         { type: 'imageBlock' },
         { type: 'blogContentBlock' },
         { type: 'blogHeaderBlock' },
-        { type: 'imageSlider' },
+        { type: 'imageSliderBlock' },
       ]
     },
   ],
