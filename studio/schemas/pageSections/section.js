@@ -134,6 +134,19 @@ export default {
       fieldset: 'sectionFields',
     },
     {
+      name: "htmlTag",
+      title: "HTML Tag",
+      type: "string",
+      description: 'Select Section, Article or Aside',
+      options: {
+        list: [
+          { title: "Section", value: "section" },
+          { title: "Article", value: "article" },
+          { title: "Aside", value: "aside" },
+        ],
+      },
+    },
+    {
       name: 'sectionBlocks',
       type: 'array',
       title: 'Sections Blocks',
