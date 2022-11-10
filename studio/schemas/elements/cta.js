@@ -30,6 +30,18 @@ export default {
         layout: 'radio',
         list: ['button', 'link']
       }
+    },
+    {
+      name: "linkType",
+      title: "Link Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Primary", value: "primary" },
+          { title: "Secondary", value: "secondary" },
+          { title: "Tertiary", value: "tertiary" },
+        ],
+      },
     }
   ],
   preview: {
