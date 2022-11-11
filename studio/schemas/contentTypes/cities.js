@@ -58,9 +58,10 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'name',
-        maxLength: 96
-      }
+        source: (doc) => `cities/${doc.name}`,
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+      },
     },
     {
       name: 'image',
