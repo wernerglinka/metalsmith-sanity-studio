@@ -89,11 +89,25 @@ export default {
       name: 'logo',
       title: 'City Logo',
       type: 'image',
+      fields: [
+        {
+          title: 'Alternative Text',
+          name: 'alt',
+          type: 'string'
+        }
+      ]
     },
     {
       name: 'wappen',
       title: 'City Wappen',
       type: 'image',
+      fields: [
+        {
+          title: 'Alternative Text',
+          name: 'alt',
+          type: 'string'
+        }
+      ]
     },
     {
       name: 'websiteLink',
