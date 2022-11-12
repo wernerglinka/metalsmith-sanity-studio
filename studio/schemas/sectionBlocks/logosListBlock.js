@@ -14,8 +14,19 @@ export default {
       type: 'string'
     },
     {
-      title: 'Logos',
-      name: 'logos',
+      name: "listSource",
+      title: "List Source",
+      type: "string",
+      options: {
+        list: [
+          { title: "Football Clubs", value: "footballClubs" },
+          { title: "Cities", value: "cities" },
+        ],
+      },
+    },
+    {
+      title: 'City Logos',
+      name: 'logosCity',
       type: 'array',
       of: [
         {
@@ -24,7 +35,22 @@ export default {
             { type: 'cities' }
           ]
         }
-      ]
+      ],
+      hidden: ({ parent }) => parent?.listSource !== 'cities'
+    },
+    {
+      title: 'Football Club Logos',
+      name: 'logosFootballClub',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            { type: 'footballClubs' }
+          ]
+        }
+      ],
+      hidden: ({ parent }) => parent?.listSource !== 'footballClubs'
     },
     {
       name: 'cta',
