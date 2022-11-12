@@ -31,6 +31,7 @@ export default {
           { title: "Blog Content", value: "blogContent" },
           { title: "Media", value: "media" },
           { title: "Text", value: "text" },
+          { title: "Logos List", value: "logosList" },
         ],
       },
       fieldset: 'sectionFields',
@@ -157,6 +158,7 @@ export default {
         { type: 'blogContentBlock' },
         { type: 'blogHeaderBlock' },
         { type: 'imageSliderBlock' },
+        { type: 'logosListBlock' },
       ]
     },
   ],
