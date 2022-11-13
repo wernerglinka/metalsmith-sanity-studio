@@ -25,6 +25,23 @@ export default {
       },
     },
     {
+      title: 'Logo Width',
+      name: 'logoWidth',
+      type: 'number',
+      description: 'Width of the logo in pixels',
+    },
+    {
+      name: "scope",
+      title: "Scope",
+      type: "string",
+      options: {
+        list: [
+          { title: "All", value: "all" },
+          { title: "Selections", value: "selections" },
+        ],
+      },
+    },
+    {
       title: 'City Logos',
       name: 'logosCity',
       type: 'array',
