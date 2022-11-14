@@ -17,23 +17,14 @@ export default {
     {
       title: 'External link',
       name: 'externalLink',
-      type: 'url',
+      type: 'string',
       description: 'Example: https://www.sanity.io',
-      validation: Rule => Rule.uri({
-        scheme: ['http', 'https', 'mailto', 'tel']
-      }),
       hidden: ({ parent }) => !parent.isExternal
     },
     {
       title: 'Internal link',
       name: 'internalLink',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.required().uri({
-          allowRelative: true,
-          relativeOnly: true,
-          scheme: ['http', 'https']
-        }),
+      type: 'string',
       description: 'Example: /about',
       hidden: ({ parent }) => parent.isExternal
     },
