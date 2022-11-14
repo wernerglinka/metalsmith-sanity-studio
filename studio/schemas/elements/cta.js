@@ -2,13 +2,7 @@ export default {
   title: 'Call to action',
   name: 'cta',
   type: 'object',
-  fieldsets: [
-    {
-      title: 'Link',
-      name: 'link',
-      description: 'Only the first value of these will be used'
-    }
-  ],
+  
   fields: [
     {
       title: 'Title',
@@ -16,11 +10,32 @@ export default {
       type: 'string'
     },
     {
+      title: 'Is External Link',
+      name: 'isExternal',
+      type: 'boolean'
+    },
+    {
       title: 'External link',
-      name: 'link',
-      type: 'string',
+      name: 'externalLink',
+      type: 'url',
       description: 'Example: https://www.sanity.io',
-      fieldset: 'link'
+      validation: Rule => Rule.uri({
+        scheme: ['http', 'https', 'mailto', 'tel']
+      }),
+      hidden: ({ parent }) => !parent.isExternal
+    },
+    {
+      title: 'Internal link',
+      name: 'internalLink',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.required().uri({
+          allowRelative: true,
+          relativeOnly: true,
+          scheme: ['http', 'https']
+        }),
+      description: 'Example: /about',
+      hidden: ({ parent }) => parent.isExternal
     },
     {
       title: 'Kind',
