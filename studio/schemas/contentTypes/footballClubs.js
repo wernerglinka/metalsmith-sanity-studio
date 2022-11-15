@@ -29,6 +29,11 @@ export default {
       type: 'link',
     },
     {
+      name: 'isExternal',
+      title: 'Website Link is External',
+      type: 'boolean'
+    },
+    {
       name: "liga",
       title: "Liga",
       type: "string",
