@@ -67,6 +67,11 @@ export default {
       title: 'Website Link',
       type: 'link',
     }, 
+    {
+      name: 'isExternal',
+      title: 'Website Link is External',
+      type: 'boolean'
+    }
   ],
   preview: {
     select: {
