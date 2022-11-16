@@ -18,6 +18,17 @@ export default {
   ],
   fields: [
     {
+      name: 'discoverable',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
+      name: 'isPage',
+      type: 'boolean',
+      description: 'set to FALSE for metadata',
+      initialValue: true,
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Page Title',

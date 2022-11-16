@@ -7,6 +7,11 @@ export default {
   icon: FiUser,
   fields: [
     {
+      name: 'discoverable',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       name: 'name',
       title: 'Name',
       type: 'string'

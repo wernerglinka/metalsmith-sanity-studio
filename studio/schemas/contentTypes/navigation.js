@@ -7,6 +7,11 @@ export default {
   icon: FiMenu,
   fields: [
     {
+      name: 'discoverable',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       type: 'string',
       name: 'name',
       title: 'Name',

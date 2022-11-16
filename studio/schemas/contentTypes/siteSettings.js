@@ -34,6 +34,11 @@ export default {
   ],
   fields: [
     {
+      name: 'discoverable',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Page Title',

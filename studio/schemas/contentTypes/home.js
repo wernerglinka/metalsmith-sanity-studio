@@ -23,16 +23,10 @@ export default {
       initialValue: true,
     },
     {
-      name: 'docType',
-      type: 'string',
-      description: 'Select doc type so it can be discoverred properly',
-      options: {
-        list: [
-          { title: "Page", value: "page" },
-          { title: "Data", value: "data" },
-        ],
-      },
-      initialValue: "page",
+      name: 'isPage',
+      type: 'boolean',
+      description: 'set to FALSE for metadata',
+      initialValue: true,
     },
     {
       name: 'title',
