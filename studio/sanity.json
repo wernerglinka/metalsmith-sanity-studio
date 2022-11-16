@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "asset-source-unsplash",
     "@sanity/code-input",
-    "icon-picker"
+    "icon-picker",
+    "@sanity/vision"
   ],
   "parts": [
     {
